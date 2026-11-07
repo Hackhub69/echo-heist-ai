@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@700;900&display=swap');
+
+:root {
+  color-scheme: dark;
+  background: #050817;
+  color: #dffbff;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% 20%, #15113a 0%, transparent 35%),
+    linear-gradient(135deg, #050817 20%, #090d25 100%);
+}
+
+#app { min-height: 100vh; display: grid; place-items: center; padding: 16px; }
+
+#game-shell {
+  width: min(96vw, 1120px);
+  border: 1px solid #20ecff99;
+  box-shadow: 0 0 0 3px #0b1440, 0 0 44px #00e5ff33, inset 0 0 28px #ff3eb533;
+  background: #050817;
+}
+
+#game canvas { display: block; width: 100%; height: auto; outline: none; }
+
+.accessible-controls {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) { #app { padding: 6px; } }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
